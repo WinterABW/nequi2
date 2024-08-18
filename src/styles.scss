@@ -104,6 +104,11 @@ body {
   border-top: 3px solid #8b2694;
 }
 
+.bs-out {
+  -webkit-box-shadow: 0px -10px 35px 7px rgba(104, 37, 107, 1);
+  -moz-box-shadow: 0px -10px 35px 7px rgba(104, 37, 107, 1);
+  box-shadow: 0px -10px 35px 7px rgba(104, 37, 107, 1);
+}
 
 
 //animations
@@ -162,5 +167,72 @@ body {
 
   .element-to-rotate {
       animation: gradientChange 3s ease infinite;
+  }
+}
+
+
+
+@-webkit-keyframes fadeInUp {
+  0% {
+      opacity: 1;
+      -webkit-transform: translate3d(0, 100%, 0);
+      transform: translate3d(0, 100%, 0);
+  }
+
+  100% {
+      opacity: 1;
+      -webkit-transform: none;
+      transform: none;
+  }
+}
+
+@keyframes fadeInUp {
+  0% {
+      opacity: 0;
+      -webkit-transform: translate3d(0, 100%, 0);
+      transform: translate3d(0, 100%, 0);
+  }
+
+  100% {
+      opacity: 1;
+      -webkit-transform: none;
+      transform: none;
+  }
+}
+
+.fadeOutDown {
+  -webkit-animation-name: fadeOutDown;
+  animation-name: fadeOutDown;
+  -webkit-animation-duration: 1s;
+  animation-duration: 1s;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+}
+
+@-webkit-keyframes fadeOutDown {
+  0% {
+      opacity: 1;
+      -webkit-transform: none;
+      transform: none;
+  }
+
+  100% {
+      opacity: 0;
+      -webkit-transform: translate3d(0, 100%, 0);
+      transform: translate3d(0, 100%, 0);
+  }
+}
+
+@keyframes fadeOutDown {
+  0% {
+      opacity: 1;
+      -webkit-transform: none;
+      transform: none;
+  }
+
+  100% {
+      opacity: 0;
+      -webkit-transform: translate3d(0, 100%, 0);
+      transform: translate3d(0, 100%, 0);
   }
 }
