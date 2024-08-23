@@ -6,7 +6,7 @@
             class="absolute w-[45%] rounded-full overflow-hidden top-0 left-1/2 transform -translate-x-1/2 -translate-y-1/2  border-[16px] border-[#a005a5] border-opacity-50">
             <div class=" w-full bg-slate-200 ">
                 <img src="assets/products/2.png" alt="Pizzería" class="w-full">
-            </div> 
+            </div>
         </div>
         <!-- [ngClass]="isSmallScreen ? 'w-40' : 'w-60'"-->
 
@@ -16,15 +16,26 @@
 
         <!-- Contenido del modal -->
         <div class="w-full roboto-light text-center text-white" [ngClass]="isSmallScreen ? 'mt-16' : 'mt-24'">
-            <h2 class="text-2xl font-semibold mb-4">Pizzería</h2>
-            <p class="mb-4">Está pizzería está situada en un pueblo muy transcurrido por lo tanto las ventas y las
+            <h2 class="text-2xl roboto-regular mb-4">Pizzería</h2>
+            <p class="mb-4 text-sm roboto-thin px-3">Está pizzería está situada en un pueblo muy transcurrido por lo tanto
+                las ventas y las
                 ganancias son mayores.</p>
 
             <!-- Otra sección de contenido -->
             <div class="p-4 rounded-lg w-full">
-                <p class="text-xs font-semibold mb-2">Beneficio por hora</p>
-                <p>Precio</p>
+                <p class="text-sm roboto-thin">Beneficio por hora</p>
+                <span class="flex flex-row justify-center items-center gap-0">
+                    <img src="assets/icons/sm-coin.png" alt="coin" class="w-8">
+                    <p class="text-sm">+{{100}}</p>
+                </span>
+
+                <span class="text-3xl">
+                    1,2000
+                </span>
+    
             </div>
+
+
             <button
                 class="bg-gradient-to-r from-blue-800 to-red-800 text-white px-4 py-2 text-3xl rounded-3xl focus:ring ring-black ring-opacity-10 gradient element-to-rotate">Gradient
                 Button</button>
