@@ -32,13 +32,15 @@ const components = [
 export class MiningComponent implements OnInit {
   isModalOpen = false;
   products = [{}];
+  selectedProduct = {};
   dataSvc = inject(DataPlanService);
 
   ngOnInit() {
     this.products = this.dataSvc.getPlanes();
   }
 
-  toggleModal() {
+  toggleModal($event: any = null) {
+    this.selectedProduct = $event;
     this.isModalOpen = !this.isModalOpen;
   }
 }

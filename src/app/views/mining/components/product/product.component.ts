@@ -12,10 +12,9 @@ export class ProductComponent implements OnInit {
   @Input() product: any;
 
   ngOnInit() {
-    console.log(this.product);
   }
 
   openModal() {
-    this.modalOpened.emit();
+    this.modalOpened.emit(this.product);
   }
 }

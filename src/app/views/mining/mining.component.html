@@ -18,7 +18,7 @@
 
         <div class="w-full mb-5">
             @for (product of products; track $index) {
-                <app-product (modalOpened)="toggleModal()" [product]="this.product"/>
+                <app-product (modalOpened)="toggleModal($event)" [product]="this.product"/>
                 }
         </div>
     </div>
@@ -26,6 +26,6 @@
     <app-actions  />
 
     @if(isModalOpen){
-    <app-modal (modalClosed)="toggleModal()" class="fadeInUp"/>
+    <app-modal (modalClosed)="toggleModal()" [product]="selectedProduct" class="fadeInUp"/>
     }
 </section>

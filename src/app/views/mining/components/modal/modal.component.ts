@@ -3,6 +3,7 @@ import {
   Component,
   EventEmitter,
   HostListener,
+  Input,
   OnInit,
   Output,
 } from '@angular/core';
@@ -18,8 +19,10 @@ export class ModalComponent implements OnInit {
   isSmallScreen: boolean = false;
   @Output() modalClosed = new EventEmitter<void>();
   modalAnimationClass: string = 'fadeInUp'; // Inicialmente se establece la animación de entrada
+  @Input() product : any
 
   ngOnInit() {
+    console.log(this.product);
     this.checkScreenHeight();
   }
 
@@ -34,11 +37,12 @@ export class ModalComponent implements OnInit {
   }
 
   closeModal() {
-    this.modalAnimationClass = 'fadeOutDown'; // Cambia la animación a la de salida
-
-    // Espera a que la animación termine antes de emitir el evento para cerrar el modal
+    this.modalAnimationClass = 'fadeOutDown';
     setTimeout(() => {
       this.modalClosed.emit();
-    }, 1000); // Duración de la animación en milisegundos
+    }, 1000);
   }
+
+
+  
 }
