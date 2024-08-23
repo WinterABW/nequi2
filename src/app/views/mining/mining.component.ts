@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, inject, OnInit } from '@angular/core';
 import { PerHourComponent } from '../../common/components/per-hour/per-hour.component';
 import { LevelComponent } from '../../common/components/level/level.component';
 import { RouterLink } from '@angular/router';
@@ -9,6 +9,7 @@ import { ToastComponent } from './components/toast/toast.component';
 import { ActionsComponent } from '../../common/components/actions/actions.component';
 import { NgClass } from '@angular/common';
 import { ModalComponent } from './components/modal/modal.component';
+import { DataPlanService } from '../../common/services/data-plans/data-plan.service';
 
 const components = [
   PerHourComponent,
@@ -18,7 +19,7 @@ const components = [
   NavComponent,
   ToastComponent,
   ActionsComponent,
-  ModalComponent
+  ModalComponent,
 ];
 
 @Component({
@@ -28,8 +29,14 @@ const components = [
   templateUrl: './mining.component.html',
   styleUrl: './mining.component.scss',
 })
-export class MiningComponent {
+export class MiningComponent implements OnInit {
   isModalOpen = false;
+  products = [{}];
+  dataSvc = inject(DataPlanService);
+
+  ngOnInit() {
+    this.products = this.dataSvc.getPlanes();
+  }
 
   toggleModal() {
     this.isModalOpen = !this.isModalOpen;

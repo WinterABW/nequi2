@@ -17,8 +17,8 @@
         <app-nav class="w-full my-2" />
 
         <div class="w-full mb-5">
-            @for (i of [1,2,3,4]; track $index) {
-                <app-product (modalOpened)="toggleModal()" />
+            @for (product of products; track $index) {
+                <app-product (modalOpened)="toggleModal()" [product]="this.product"/>
                 }
         </div>
     </div>
